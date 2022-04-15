@@ -21,6 +21,7 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     overflow: overlay;
+
   }
 
   html {
