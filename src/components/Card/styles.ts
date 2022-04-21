@@ -4,22 +4,24 @@ export const CardContainer = styled.div`
   background-color: transparent;
   width: 200px;
   height: 300px;
-  
+
   border: 1px solid black;
   border-radius: 8px;
 
   perspective: 1000px;
-
+  
   &:hover .flip-card-inner {
     transform: rotateY(180deg);
   }
+
 `
 
 export const ContentCard = styled.div`
   position: relative;
 
-  width: 100%;
+  width: 200px;
   height: 100%;
+  
 
   text-align: center;
   transition: transform 0.8s;
@@ -69,15 +71,20 @@ export const BackCard = styled.div`
   
 
   h1 {
+    padding: 0 5px;
     font-weight: bold;
+    font-size: 1.8rem;
   }
 
   h2 {
+    padding: 0 5px;
     font-weight: 500;
-    padding: 0 1px;
+    font-size: 1.5rem;
   }
   p{
+    padding: 0 5px;
     font-weight: 400;
+    font-size: 1.2rem;
   }
 
 
