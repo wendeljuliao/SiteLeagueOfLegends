@@ -77,9 +77,9 @@ export const MobileIcon = styled.div`
 
 export const LinkItem = styled(Link)<{$active?: boolean}>`
   color: var(--white);
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   
-  margin: 0 .5rem;
+  margin: .5rem;
 
   &:hover {
     color: #87AAFA;

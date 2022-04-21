@@ -29,20 +29,41 @@ export const ContentGrid = styled.div`
   }
 
   @media (max-width: 768px) {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    overflow-y: hidden;
-
-    position: relative;
-
-    justify-content: left;
-    align-items: center;
-    flex-direction: row;
-    
-    width: 90%;
+    display: none;
     
   }
 
+`
+
+export const ContentMobile = styled.div`
+  display: none;
+  @media (max-width: 768px) {
+    display: flex;
+
+    padding: 1rem 0;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    .rows {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+
+      grid-gap: 10px;
+
+      padding: 2rem 0 .5rem;
+
+      position: relative;
+
+      justify-content: left;
+      align-items: center;
+      flex-direction: row;
+      width: 90%;
+    }
+  }
 
 `

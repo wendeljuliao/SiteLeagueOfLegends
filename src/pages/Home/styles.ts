@@ -69,7 +69,7 @@ export const Phrase = styled.p`
   }
 
   @media screen and (max-width: 768px) {
-    font-size: 5.2vw;
+    font-size: 4.75vw;
   }
 
 `
