@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-import { Container, ContentGrid, ContentMobile } from "./styles";
+import { Container, ContentGrid, ScrollContent, ContentMobile } from "./styles";
 
 import Card from "@components/Card";
 
@@ -8,6 +8,7 @@ import { api } from "@services/api";
 
 export default function Characters() {
   const [champions, setChampions] = useState({});
+  const [increment, setIncrement] = useState(30);
 
   useEffect(() => {
     api.get("data/pt_BR/champion.json").then((res) => {
@@ -16,9 +17,37 @@ export default function Characters() {
     });
   }, []);
 
+  function loadMore() {
+    if (increment < Object.keys(champions).length) {
+      setIncrement((prevIncrement) => (prevIncrement += 30));
+    }
+  }
+
   return (
     <Container>
-      <ContentGrid>
+      <ScrollContent
+        pageStart={0}
+        loadMore={loadMore}
+        hasMore={increment < Object.keys(champions).length}
+        loader={
+          <div className="loader" key={0}>
+            Loading ...
+          </div>
+        }
+      >
+        {Object.values(champions)
+          .slice(0, increment)
+          .map((champion: any) => (
+            <Card
+              key={champion.id}
+              name={champion.name}
+              title={champion.title}
+              tags={champion.tags}
+              image={champion.image.full}
+            />
+          ))}
+      </ScrollContent>
+      {/* <ContentGrid>
         {Object.values(champions).map((champion: any) => (
           <Card
             key={champion.id}
@@ -28,7 +57,7 @@ export default function Characters() {
             image={champion.image.full}
           />
         ))}
-      </ContentGrid>
+      </ContentGrid> */}
       <ContentMobile>
         <section className="rows">
           {Object.values(champions)
