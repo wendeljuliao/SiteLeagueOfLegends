@@ -38,7 +38,7 @@ export const ContentGrid = styled.div`
 `
 
 export const ScrollContent = styled(InfiniteScroll)`
-display: grid;
+  display: grid;
   
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 10px 20px;
