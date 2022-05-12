@@ -5,9 +5,10 @@ function CardMemory({
   index,
   item,
   clearedCards,
+  open,
   handleClick,
 }: ICardMemoryProps) {
-  const active = clearedCards[item.id] ? true : false;
+  const active = clearedCards[item.id] || open ? true : false;
 
   return (
     <CardContainer active={active} onClick={() => handleClick(index, item)}>
